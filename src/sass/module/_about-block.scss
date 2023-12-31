@@ -1,0 +1,51 @@
+@use "global" as *;
+.about-block {
+  position: relative;
+}
+.about-block::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: rem(120);
+  height: rem(55);
+  left: rem(16);
+  top: rem(28);
+  background-image: url(../images/common/voice-fish.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: -1;
+  @include mq("md") {
+    width: rem(301);
+    height: rem(138);
+    left: initial;
+    right: min(72vw, 81%);
+    top: rem(80);
+  }
+}
+.about-block .about__contents {
+  margin-top: 0;
+  @include mq("md") {
+    margin-top: rem(76);
+  }
+}
+.about-block .about__content {
+  align-items: center;
+}
+.about-block .about__img-right {
+  margin-left: initial;
+  max-width: 100%;
+  @include mq("md") {
+    margin-left: auto;
+    max-width: rem(880);
+  }
+}
+.about-block .about__head {
+  position: absolute;
+  top: rem(24);
+  left: rem(24);
+  color: $color-white;
+  @include mq("md") {
+    position: initial;
+  }
+}

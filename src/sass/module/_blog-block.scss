@@ -1,0 +1,210 @@
+@use "global" as *;
+.blog-block {
+  position: relative;
+}
+.blog-block::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: rem(120);
+  height: rem(55);
+  left: rem(16);
+  top: rem(28);
+  background-image: url(../images/common/voice-fish.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: -1;
+  @include mq("md") {
+    width: rem(301);
+    height: rem(138);
+    left: rem(100);
+    top: rem(80);
+  }
+}
+.blog-block__inner {
+  @include mq("md") {
+    display: flex;
+    gap: rem(80);
+  }
+}
+.blog-block__list {
+  height: 100%;
+  @include mq("md") {
+    display: grid;
+    grid-template-columns: repeat(2, rem(333));
+    width: 70.6%;
+    gap: rem(40);
+  }
+}
+.blog-block__item + .blog-block__item {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: 0;
+  }
+}
+.pagenavi {
+  grid-column: 1 / -1; /* ページネーションが全幅を占めるようにします */
+}
+//=====================
+//サイドバー
+//=====================
+.blog-block__sidebar {
+  margin-top: rem(80);
+  @include mq("md") {
+    margin-top: 0;
+  }
+}
+.blog-block__sidebar-item:not(:first-child) {
+  margin-top: rem(80);
+}
+.blog-block__sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  padding-left: rem(16);
+  border-left: rem(8) solid $color-blue;
+}
+.blog-block__sidebar-icon {
+  max-width: rem(50);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 50 / 50;
+}
+.blog-block__sidebar-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.blog-block__sidebar-content {
+  margin-top: rem(24);
+}
+.blog-block__popular-link.blog-card {
+  display: flex;
+  flex-direction: initial;
+  padding: rem(16);
+  gap: rem(16);
+}
+.blog-block__popular-list .blog-card__info {
+  border-bottom: none;
+  padding-top: 0;
+}
+.blog-block__popular-item + .blog-block__popular-item {
+  margin-top: rem(24);
+}
+
+// 口コミ
+.blog-block__reviews__img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.blog-block__reviews-wrap {
+  margin-top: rem(16);
+}
+.blog-block__reviews-category {
+  color: $color-green;
+  font-size: rem(12);
+  font-weight: $regular;
+  line-height: 1.5;
+}
+.blog-block__reviews-title {
+  margin-top: rem(8);
+  color: $color-green;
+  font-weight: $medium;
+  line-height: 1;
+}
+.blog-block__reviews-btn {
+  margin-top: rem(44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// キャンペーン
+.blog-block__campaign-item {
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.blog-block__campaign-item + .blog-block__campaign-item {
+  margin-top: rem(40);
+}
+.blog-block__campaign-list .campaign-card__body {
+  padding: rem(16) rem(23) rem(24);
+}
+.blog-block__campaign-list .campaign-card__head {
+  text-align: center;
+  margin-top: 0;
+}
+.blog-block__campaign-list .campaign-card__all {
+  font-size: rem(14);
+  margin-top: rem(8);
+}
+.blog-block__campaign-list .campaign-card__price span:nth-child(1) {
+  font-size: rem(20);
+}
+.blog-block__campaign-list .campaign-card__price span:nth-child(2) {
+  font-size: rem(32);
+}
+.blog-block__campaign-btn {
+  margin-top: rem(40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// アーカイブ
+.blog-block__archive-head {
+  position: relative;
+  font-size: rem(24);
+  color: $color-blue;
+  font-weight: $regular;
+  padding-left: rem(24);
+  cursor: pointer;
+}
+.blog-block__archive-head::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-top: rem(8) solid transparent;
+  border-bottom: rem(8) solid transparent;
+  border-left: rem(16) solid $color-blue;
+  border-right: 0;
+}
+.blog-block__archive-head.is-active::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-right: rem(8) solid transparent;
+  border-left: rem(8) solid transparent;
+  border-top: rem(16) solid $color-blue;
+  border-bottom: 0;
+}
+.blog-block__archive-head + .blog-block__archive-head {
+  margin-top: rem(4);
+}
+.blog-block__archive-link {
+  display: none;
+}
+.blog-block__archive-link.is-active {
+  display: block;
+}
+.blog-block__archive-wrap + .blog-block__archive-wrap {
+  margin-top: rem(4);
+}
+.blog-block__archive-content {
+  margin-left: rem(16);
+}

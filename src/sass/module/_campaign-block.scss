@@ -1,0 +1,127 @@
+@use "global" as *;
+.campaign-block {
+  position: relative;
+}
+.campaign-block::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: rem(120);
+  height: rem(55);
+  left: rem(16);
+  top: rem(28);
+  background-image: url(../images/common/voice-fish.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: -1;
+  @include mq("md") {
+    width: rem(301);
+    height: rem(138);
+    left: rem(100);
+    top: rem(80);
+  }
+}
+.campaign-block__categories {
+  display: grid;
+  grid-template-columns: repeat(2, rem(162));
+  gap: rem(21);
+  justify-content: center;
+  @include mq("md") {
+    grid-template-columns: repeat(4, rem(162));
+    gap: rem(32);
+    justify-content: initial;
+  }
+}
+.campaign-block__category {
+  text-align: center;
+}
+.campaign-block__category a {
+  width: 100%;
+  max-width: rem(162);
+  display: inline-block;
+  font-family: $base-font-family;
+  color: $color-blue;
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: 1.57;
+  padding: rem(6) rem(20);
+  border: 1px solid $color-blue;
+  background-color: $color-white;
+  @include mq("md") {
+    max-width: rem(162);
+    font-size: rem(14);
+    padding: rem(6) min(rem(24), 2vw);
+  }
+}
+.campaign-block__category a.is-active {
+  color: $color-white;
+  background-color: $color-blue;
+}
+.campaign-block__lists {
+  margin-top: rem(40);
+  gap: rem(40);
+  display: grid;
+  @include mq("md") {
+    margin-top: rem(40);
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(40);
+    row-gap: rem(80);
+  }
+}
+.campaign-block__list {
+  display: none;
+  background: $color-white;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  max-width: max(rem(280), 60vw);
+  width: 100%;
+  margin-inline: auto;
+  @include mq("md") {
+    max-width: 100%;
+  }
+}
+.campaign-block__list.is-active{
+	display: block;
+}
+.campaign-block__card .campaign-card__head {
+  @include mq("md") {
+    font-size: rem(24);
+  }
+}
+.campaign-block__card .campaign-card__body {
+  padding: rem(16) rem(16) rem(24);
+  @include mq("md") {
+    padding: rem(24) rem(24) rem(40);
+  }
+}
+.campaign-card__content {
+  margin-top: rem(24);
+}
+.campaign-card__text {
+  color: $color-green;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1.5;
+}
+.campaign-card__date,
+.campaign-card__inquiry {
+  color: $color-blue;
+  text-align: center;
+}
+.campaign-card__date {
+  margin-top: rem(32);
+  font-family: $other-font-family;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: 1.12;
+}
+.campaign-card__inquiry {
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: 1.28;
+  margin-top: rem(7);
+}
+.campaign-card__btn {
+  text-align: center;
+  margin-top: rem(16);
+}

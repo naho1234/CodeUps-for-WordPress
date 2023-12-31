@@ -1,0 +1,62 @@
+@use "global" as *;
+.blog {
+  padding-top: rem(80);
+  position: relative;
+  @include mq("md") {
+    padding-top: rem(100);
+  }
+}
+.blog__inner.inner{
+	padding-left: rem(21);
+	padding-right: rem(21);
+	@include mq('md') {
+	 padding-left: 25px;
+	 padding-right: 25px;
+	}
+}
+.blog::before {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: rem(500);
+    left: 0;
+    top: 0;
+    background-image: url(../images/common/blog-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+		z-index: -2;
+  }
+}
+.blog__items{
+	margin-top: rem(28);
+	position: relative;
+	@include mq('md') {
+	 margin-top: rem(83);
+	}
+}
+.blog__items::after {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    display: block;
+    width: rem(437);
+    height: rem(201);
+    right: min(67%, 55vw);
+    top: rem(-222);
+    background-image: url(../images/common/blog-fish.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+		z-index: -1;
+  }
+}
+.blog__btn{
+	margin-top: rem(40);
+	text-align: center;
+	@include mq('md') {
+	 margin-top: rem(80);
+	}
+}

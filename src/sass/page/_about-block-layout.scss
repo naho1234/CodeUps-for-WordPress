@@ -1,0 +1,7 @@
+@use "global" as *;
+.about-block-layout {
+  padding-top: rem(52);
+  @include mq("md") {
+    padding-top: rem(150);
+  }
+}

@@ -1,0 +1,43 @@
+@use "global" as *;
+.voice__items::before,
+.voice__items::after {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+.voice__items::before {
+  @include mq("md") {
+    width: rem(301);
+    height: rem(138);
+    top: rem(-213);
+    right: min(80%, 68vw);
+    background-image: url(../images/common/voice-fish.png);
+  }
+}
+.voice__items::after {
+  @include mq("md") {
+    width: rem(71);
+    height: rem(162);
+    bottom: rem(-204);
+    left: min(93.5%, 87vw);
+    background-image: url(../images/common/voice-seahorse.png);
+  }
+}
+.voice__items {
+  margin-top: rem(44);
+  position: relative;
+  @include mq("md") {
+    margin-top: rem(30);
+  }
+}
+.voice__btn {
+  margin-top: rem(40);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

@@ -1,0 +1,76 @@
+@use "global" as *;
+.mv__img img,
+.mv__splide-slide img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  @include mq("md") {
+    height: 100vh;
+  }
+}
+.mv__img--left img {
+  @include mq("md") {
+    object-position: right;
+  }
+}
+.mv__img--right img {
+  display: none;
+  @include mq("md") {
+    display: block;
+    object-position: left;
+  }
+}
+.mv__wrap {
+  width: 100%;
+}
+.mv__img--left,
+.mv__img--right {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  @include mq("md") {
+    width: 50%;
+  }
+}
+.mv {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.mv__splide-slide {
+  width: 100%;
+  height: 100%;
+}
+.mv__img--left {
+  top: 0;
+  left: 0;
+  @include mq("md") {
+    top: rem(300);
+    left: rem(-40);
+  }
+}
+.mv__img--right {
+  top: 0;
+  right: 0;
+  @include mq("md") {
+    top: rem(380);
+    right: rem(-40);
+  }
+}
+.mv__splide {
+  width: 100%;
+  height: 100%;
+}
+.mv__title {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+.mv__title .main-title__text,
+.mv__title .main-title__sub-text {
+  color: $color-white;
+}

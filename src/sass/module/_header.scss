@@ -1,0 +1,50 @@
+@use "global" as *;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(13, 41, 54, 0.68);
+  height: rem(80);
+  z-index: 9999;
+  @include mq("md") {
+    height: rem(90);
+  }
+}
+.header.is-open {
+  background: $color-blue;
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  padding: 0 rem(15);
+  justify-content: space-between;
+  @include mq(md) {
+    padding: 0 rem(22) 0 rem(40);
+  }
+}
+.header__logo {
+  max-width: rem(102);
+  width: 100%;
+  aspect-ratio: 102 /38;
+  height: auto;
+  position: relative;
+  z-index: 9999;
+  @include mq(md) {
+    max-width: rem(133);
+    aspect-ratio: 133 / 50;
+  }
+}
+.header__logo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.header__logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}

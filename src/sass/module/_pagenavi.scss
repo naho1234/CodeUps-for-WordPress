@@ -1,0 +1,89 @@
+@use "global" as *;
+.pagenavi {
+  margin-top: rem(80);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+.pagenavi__inner {
+  margin-inline: auto;
+  max-width: rem(344);
+  width: 100%;
+  @include mq("md") {
+    max-width: rem(444);
+  }
+}
+.wp-pagenavi {
+  display: flex;
+  align-items: center;
+}
+.pagenavi .wp-pagenavi {
+  clear: both;
+  text-align: center;
+}
+.pagenavi .page,
+.pagenavi .wp-pagenavi span {
+  padding: rem(9) rem(14);
+  font-size: rem(16);
+  font-weight: $bold;
+  color: $color-blue;
+  line-height: 1;
+  white-space: nowrap;
+  border: 1px solid $color-blue;
+  background-color: $color-white;
+  transition: 0.3s;
+  font-family: $other-font-family;
+  width: rem(38);
+  height: rem(38);
+  @include mq("md") {
+    padding: rem(9) rem(14);
+    font-size: rem(16);
+    width: rem(38);
+    height: rem(38);
+  }
+}
+.pagenavi a:not(:first-of-type) {
+  margin-left: rem(12);
+  @include mq("md") {
+    margin-left: rem(12);
+  }
+}
+.pagenavi span,
+.pagenavi a:last-of-type {
+  margin-left: rem(40);
+  @include mq("md") {
+    margin-left: rem(40);
+  }
+}
+.previouspostslink,
+.nextpostslink {
+  max-width: rem(38);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 38 / 38;
+  transition: 0.3s;
+  @include mq("md") {
+    max-width: rem(38);
+  }
+}
+.previouspostslink:hover,
+.nextpostslink:hover {
+  opacity: 0.7;
+}
+.previouspostslink img,
+.nextpostslink img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.pagenavi .wp-pagenavi .current {
+  color: $color-white;
+  background-color: $color-blue;
+  border-color: $color-blue;
+}
+.pagenavi .page:hover {
+  color: $color-white;
+  background-color: $color-blue;
+  border-color: $color-blue;
+}

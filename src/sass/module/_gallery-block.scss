@@ -1,0 +1,101 @@
+@use "global" as *;
+.gallery-block {
+  position: relative;
+}
+.gallery-block::before {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    display: block;
+    background-image: url(../images/common/contact-fish.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+    width: rem(301);
+    height: rem(138);
+    left: min(72vw, 81%);
+    top: rem(40);
+	z-index: -1;
+  }
+}
+.gallery-block__wrap {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+.gallery-block__box {
+  display: grid;
+  gap: rem(8);
+  justify-content: center;
+}
+.gallery-block__box:first-child {
+  @include mq("md") {
+    grid-template-columns: min(rem(492), 35vw) min(rem(580), 60vw);
+  }
+}
+.gallery-block__box:first-child .gallery-block__img:first-of-type {
+  @include mq("md") {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}
+.gallery-block__box:first-child .gallery-block__img:nth-of-type(2) {
+  @include mq("md") {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+}
+.gallery-block__box + .gallery-block__box {
+  margin-top: rem(8);
+}
+.gallery-block__box:nth-child(2) {
+  @include mq("md") {
+    grid-template-columns: min(rem(580), 60vw) min(rem(492), 35vw);
+  }
+}
+.gallery-block__box:nth-child(2) .gallery-block__img:nth-of-type(3) {
+  @include mq("md") {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}
+.gallery-block__img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+//=====================
+//modal
+//=====================
+.gallery-block__modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background: rgba(32, 32, 32, 0.8);
+}
+.gallery-block__modal img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 63.889%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 920 / 586;
+}
+

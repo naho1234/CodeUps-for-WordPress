@@ -1,0 +1,9 @@
+@use "global" as *;
+.voice-list {
+  display: grid;
+  place-items: center;
+  gap: rem(39);
+  @include mq("md") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

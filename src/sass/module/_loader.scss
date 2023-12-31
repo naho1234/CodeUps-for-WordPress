@@ -1,0 +1,38 @@
+@use "global" as *;
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: $color-white;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-title__text {
+  font-size: rem(40);
+  font-family: $other-font-family;
+  display: none;
+  text-transform: uppercase;
+  color: $color-blue;
+  font-weight: $regular;
+  letter-spacing: 0.54em;
+  text-indent: 0.54em; //letter-spacingを使用していると中央寄せにならないのでこれを使用
+  @include mq("md") {
+    font-size: rem(80);
+    line-height: 1.25;
+  }
+}
+.main-title__sub-text {
+  font-size: rem(20);
+  font-family: $second-font-family;
+  display: none;
+  color: $color-blue;
+  font-weight: $regular;
+}
