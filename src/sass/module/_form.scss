@@ -1,0 +1,74 @@
+@use "global" as *;
+
+.form__wrap {
+  padding-bottom: rem(24);
+  @include mq(md) {
+    display: grid;
+    grid-template-columns: rem(185) 1fr;
+    gap: rem(40);
+    align-items: center;
+    padding-bottom: rem(40);
+  }
+}
+.form__wrap {
+  border-bottom: 1px solid $color-blue;
+}
+.form__wrap.form__wrap--checkbox,
+.form__wrap.form__wrap--textarea {
+  @include mq(md) {
+    align-items: flex-start;
+  }
+}
+.form__wrap + .form__wrap {
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+.form__label {
+  font-size: rem(16);
+  color: $color-green;
+  font-weight: $bold;
+  line-height: 1;
+  @include mq(md) {
+    max-width: rem(200);
+    width: 100%;
+  }
+}
+.form__label span {
+  margin-left: rem(8);
+  padding: rem(4) rem(16);
+  display: inline-block;
+  font-size: rem(12);
+  color: $color-white;
+  font-weight: $regular;
+  letter-spacing: 0.03em;
+  background-color: #c94800;
+}
+.form__input,
+.form__select,
+.form__radio,
+.form__checkbox,
+.form__textarea {
+  margin-top: rem(16);
+  @include mq(md) {
+    margin-top: 0;
+  }
+}
+.form__input,
+.form__textarea {
+  flex-grow: 1;
+}
+.form__submit {
+  margin-top: rem(24);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+.form__footer {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

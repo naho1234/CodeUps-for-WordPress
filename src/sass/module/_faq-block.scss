@@ -1,0 +1,91 @@
+@use "global" as *;
+.faq-block {
+  position: relative;
+}
+.faq-block::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: rem(120);
+  height: rem(55);
+  left: rem(16);
+  top: rem(28);
+  background-image: url(../images/common/voice-fish.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: -1;
+  @include mq("md") {
+    width: rem(301);
+    height: rem(138);
+    left: rem(100);
+    top: rem(80);
+  }
+}
+.faq-block__items {
+  max-width: rem(500);
+  width: 100%;
+  margin-inline: auto;
+  @include mq("md") {
+    max-width: rem(700);
+  }
+}
+.faq-block__item + .faq-block__item {
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+.faq-block__title {
+  padding: rem(8) rem(16);
+  color: $color-white;
+  font-size: rem(16);
+  font-weight: $regular;
+  background-color: $color-blue;
+  position: relative;
+  display: flex;
+  align-items: center;
+  @include mq("md") {
+    padding: rem(26) rem(40);
+    font-size: rem(20);
+  }
+}
+.faq-block__title::before,
+.faq-block__title::after {
+  position: absolute;
+  content: "";
+  width: rem(20);
+  height: rem(1);
+  background-color: $color-white;
+  transition: 0.35s;
+  @include mq("md") {
+    width: rem(32);
+  }
+}
+.faq-block__title::before {
+  right: rem(16);
+  @include mq("md") {
+    right: rem(40);
+    transform: rotate(0deg);
+  }
+}
+.faq-block__title::after {
+  right: rem(16);
+  transform: rotate(90deg);
+  @include mq("md") {
+    right: rem(40);
+  }
+}
+.faq-block__title.is-open::after {
+  transform: rotate(0deg);
+}
+.faq-block__content {
+  display: none;
+  border: 1px solid $color-blue;
+  padding: rem(24);
+  margin-top: rem(8);
+  @include mq("md") {
+    padding: rem(40);
+    margin-top: rem(16);
+  }
+}

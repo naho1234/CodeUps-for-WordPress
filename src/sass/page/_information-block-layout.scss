@@ -1,7 +1,9 @@
 @use "global" as *;
 .information-block-layout {
-	padding-top: rem(52);
+	padding-top: rem(120);
+	padding-bottom: rem(25);
 	@include mq("md") {
 	  padding-top: rem(150);
+	  padding-bottom: 0;
 	}
   }

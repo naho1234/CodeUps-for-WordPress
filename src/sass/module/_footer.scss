@@ -8,12 +8,6 @@
     padding-bottom: rem(80);
   }
 }
-.footer-layout {
-  margin-top: rem(100);
-  @include mq("md") {
-    margin-top: rem(160);
-  }
-}
 .footer__wrap {
   @include mq("md") {
     display: flex;

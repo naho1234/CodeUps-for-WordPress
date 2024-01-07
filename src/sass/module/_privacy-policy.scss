@@ -1,0 +1,51 @@
+@use "global" as *;
+.privacy-policy {
+  position: relative;
+}
+.privacy-policy::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: rem(120);
+  height: rem(55);
+  left: rem(16);
+  top: rem(28);
+  background-image: url(../images/common/voice-fish.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: -1;
+  @include mq("md") {
+    width: rem(301);
+    height: rem(138);
+    left: rem(100);
+    top: rem(80);
+  }
+}
+.privacy-policy__inner.inner {
+  max-width: rem(850);
+  width: 100%;
+}
+.privacy-policy__title,
+.privacy-policy__text {
+  color: $color-green;
+}
+.privacy-policy__title {
+  font-size: rem(24);
+  font-weight: $medium;
+  @include mq("md") {
+    font-size: rem(32);
+  }
+}
+.privacy-policy__wrap {
+  margin-top: rem(40);
+}
+.privacy-policy__text {
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 2;
+}
+.privacy-policy__text-indent {
+  padding-left: 1em;
+  text-indent: -1em;
+}

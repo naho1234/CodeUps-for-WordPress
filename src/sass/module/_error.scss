@@ -1,0 +1,53 @@
+@use "global" as *;
+.error__inner {
+  position: relative;
+}
+.error__inner::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: rem(345);
+  height: rem(345);
+  top: 0;
+  left: 0;
+  background-image: url(../images/common/404-whale.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 1;
+  @include mq("md") {
+    width: rem(698);
+    height: rem(698);
+  }
+}
+.error__content {
+  color: $color-white;
+  font-family: $other-font-family;
+  max-width: rem(500);
+  width: 100%;
+  margin-inline: auto;
+  text-align: center;
+}
+.error__head {
+  font-weight: $regular;
+  letter-spacing: 0.5em;
+  font-size: rem(80);
+  text-indent: 0.2em;
+  @include mq("md") {
+    font-size: rem(160);
+  }
+}
+.error__text {
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1.5;
+  @include mq('md') {
+   margin-top: rem(24);
+  }
+}
+.error__btn{
+	margin-top: rem(40);
+	@include mq('md') {
+	 margin-top: rem(80);
+	}
+}

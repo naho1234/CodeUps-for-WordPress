@@ -1,16 +1,16 @@
 @use 'global' as *;
 .breadcrumb {
-	margin-top: rem(8);
+	padding-top: rem(8);
 	font-size: rem(14);
 	color: $color-green;
 	@include mq("md") {
-	  margin-top: rem(8);
+	  padding-top: rem(8);
 	  font-size: rem(14);
 	}
   }
   .breadcrumb span:not(:first-of-type) {
-	margin-left: rem(8);
+	margin-left: rem(3);
 	@include mq("md") {
-	  margin-left: rem(8);
+	  margin-left: rem(4);
 	}
   }

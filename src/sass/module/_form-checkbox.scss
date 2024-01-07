@@ -1,0 +1,89 @@
+@use "global" as *;
+
+.form-checkbox label {
+  display: block;
+}
+.form-checkbox label:not(:first-of-type) {
+  margin-top: rem(4);
+}
+.form-checkbox input + span {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 0 0 rem(22);
+  position: relative;
+  font-size: rem(16);
+  color: $color-green;
+  font-weight: $regular;
+  line-height: 1;
+}
+.form-checkbox input + span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid $color-blue;
+  display: block;
+  width: rem(14);
+  height: rem(14);
+}
+.form-checkbox input + span::after {
+  content: "";
+  margin-top: rem(-1);
+  position: absolute;
+  top: 50%;
+  left: rem(2);
+  transform: translateY(-50%) rotate(-45deg);
+  display: block;
+  width: rem(9);
+  height: rem(5);
+  border-bottom: rem(2) solid #c94800;
+  border-left: rem(2) solid #c94800;
+  transition: 0.3s;
+  opacity: 0;
+}
+.form-checkbox input:checked + span::after {
+  opacity: 1;
+}
+
+.form-checkbox.form__footer label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-checkbox.form__footer input + span {
+  line-height: 1.5;
+  @include mq("md") {
+    line-height: 1;
+  }
+}
+.form-checkbox.form__footer input + span::before {
+  width: rem(22);
+  height: rem(22);
+  top: 0;
+  transform: initial;
+  @include mq("md") {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.form-checkbox.form__footer input + span {
+  padding-left: rem(30);
+  @include mq("md") {
+    padding-left: rem(38);
+  }
+}
+.form-checkbox.form__footer input + span::after {
+  width: rem(15);
+  height: rem(8);
+  left: rem(3);
+  margin-top: rem(4);
+  top: 0;
+  transform: translateY(0) rotate(-45deg);
+  @include mq('md') {
+	top: 50%;
+	margin-top: rem(-2);
+	transform: translateY(-50%) rotate(-45deg);
+  }
+}

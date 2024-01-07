@@ -1,0 +1,11 @@
+@use "global" as *;
+.main-error {
+  background-color: $color-blue;
+  padding-top: rem(80);
+  @include mq("md") {
+    padding-top: rem(90);
+  }
+}
+.main-error .breadcrumb {
+  color: $color-white;
+}

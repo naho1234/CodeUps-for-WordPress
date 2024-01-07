@@ -29,5 +29,7 @@
   font-size: rem(40);
   @include mq("md") {
     font-size: rem(80);
+	top: 60%;
+	transform: translate(-50%, -60%);
   }
 }

@@ -88,7 +88,35 @@ window.addEventListener("load", function () {
       }
     });
   });
+
+  // フォームエラー
+  $(".js-send-button").on("click", function () {
+    var formValid = true;
+    $(".js-required").each(function () {
+      if (!this.checkValidity()) {
+        $(this).addClass("invalid");
+        formValid = false;
+      } else {
+        $(this).removeClass("invalid");
+      }
+    });
+    if (formValid) {
+      // すべての入力が有効な場合、フォームを送信
+      $("form").submit();
+    } else {
+      $(".js-error-message").addClass("invalid"); // エラーメッセージを表示
+    }
+
+    return false;
+  });
+
+  // 入力フィールドが変更されたとき、エラー状態をリセット
+  $(".js-required").on("input", function () {
+    $(this).removeClass("invalid");
+    $(".js-error-message").removeClass("invalid"); // エラーメッセージを非表示
+  });
 });
+
 jQuery(function ($) {
   // ハンバーガーメニュー
   $(".js-hamburger").click(function () {
@@ -177,25 +205,13 @@ jQuery(function ($) {
 
   // タブ切り替え
   $(function () {
-    // campaignのタブ切り替え
-    var campaignTabButton = $(".campaign-block__categories .js-tab-button"),
-      campaignTabContent = $(".campaign-block__lists .js-tab-content");
-    initializeTabs(campaignTabButton, campaignTabContent, ".campaign-card__category", true);
-
-    // informationのタブ切り替え
-    var informationTabButton = $(".information-block__categories .js-tab-button"),
-      informationTabContent = $(".information-block__lists .js-tab-content");
-    initializeTabs(informationTabButton, informationTabContent, ".information-card__head", false);
+    // タブ切り替え機能を初期化する関数
     function initializeTabs(tabButton, tabContent, contentSelector, showAllInitially) {
-      // 初期状態で"ALL"タブをアクティブにし、全てのコンテンツを表示するかどうか
       if (showAllInitially) {
-        tabButton.removeClass("is-active");
-        tabButton.first().addClass("is-active"); // "ALL"タブをアクティブにする
-        tabContent.addClass("is-active"); // 全てのコンテンツを表示
-      } else {
-        tabButton.removeClass("is-active");
         tabButton.first().addClass("is-active");
-        tabContent.removeClass("is-active");
+        tabContent.addClass("is-active");
+      } else {
+        tabButton.first().addClass("is-active");
         tabContent.first().addClass("is-active");
       }
       tabButton.on("click", function () {
@@ -215,9 +231,18 @@ jQuery(function ($) {
         }
       });
     }
+
+    // campaignのタブ切り替え
+    initializeTabs($(".campaign-block__categories .js-tab-button"), $(".campaign-block__lists .js-tab-content"), ".campaign-card__category", true);
+
+    // informationのタブ切り替え
+    initializeTabs($(".information-block__categories .js-tab-button"), $(".information-block__lists .js-tab-content"), ".information-card__head", false);
+
+    // voiceのタブ切り替え
+    initializeTabs($(".voice-block__categories .js-tab-button"), $(".voice-block__lists .js-tab-content"), ".voice-card__category", true);
   });
 
-  // アコーディオン
+  // アコーディオン（ブログ）
   $(function () {
     // 2023年のセクションとその中の月のタイトルを最初から表示
     $(".blog-block__archive-wrap:first-of-type .js-accordion-content").css("display", "block");
@@ -234,6 +259,17 @@ jQuery(function ($) {
 
       // アクティブクラスをトグル
       $(this).toggleClass("is-active");
+    });
+  });
+
+  // アコーディオン（FAQ）
+  $(function () {
+    // 初期状態で全てのコンテンツを表示
+    $(".faq-block__content").css("display", "block");
+    $(".js-accordion-title").addClass("is-open");
+    $(".js-accordion-title").on("click", function () {
+      $(this).next().slideToggle(300);
+      $(this).toggleClass("is-open");
     });
   });
 });

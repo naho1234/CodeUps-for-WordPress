@@ -1,0 +1,36 @@
+@use "global" as *;
+
+.form-input input {
+  padding: rem(8) rem(16);
+  width: 100%;
+  font-size: rem(16);
+  line-height: 1;
+  border-radius: 0;
+  border: 1px solid $color-blue;
+}
+.form-input input::placeholder {
+  color: #ddf0f1;
+}
+.form-input input.invalid {
+  border: 1px solid #c94800;
+  background: rgba(201, 72, 0, 0.2);
+}
+.form-textarea textarea.invalid {
+  border: 1px solid #c94800;
+  background: rgba(201, 72, 0, 0.2);
+}
+
+.form-input input.invalid::placeholder {
+  color: #ffffff;
+}
+.error-message {
+  font-size: rem(14);
+  color: #c94800;
+  font-weight: $regular;
+  display: none;
+  text-align: center;
+}
+.error-message.invalid {
+  display: block;
+  margin-bottom: rem(40);
+}

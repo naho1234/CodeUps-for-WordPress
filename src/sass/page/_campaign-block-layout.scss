@@ -1,7 +1,9 @@
 @use "global" as *;
 .campaign-block-layout {
   padding-top: rem(52);
+  padding-bottom: rem(22);
   @include mq("md") {
     padding-top: rem(150);
+	padding-bottom: 0;
   }
 }

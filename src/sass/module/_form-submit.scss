@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.form-submit {
+  margin-inline: auto;
+}
+.form-submit .button {
+  width: rem(200);
+}

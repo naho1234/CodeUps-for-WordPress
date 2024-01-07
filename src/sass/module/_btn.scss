@@ -10,7 +10,11 @@
   color: $color-white;
   z-index: 1;
   transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
-	border: 1px solid $color-blue;
+  border: 1px solid $color-blue;
+}
+.button.button--white {
+  background-color: $color-white;
+  color: $color-blue;
 }
 .button::first-letter {
   text-transform: uppercase;
@@ -21,12 +25,15 @@
   position: absolute;
 }
 .button::before {
-	border: 1px solid $color-blue;
-	height: 100%;
-	left: rem(4);
-	top: rem(4);
-	width: 100%;
-	z-index: -3;
+  border: 1px solid $color-blue;
+  height: 100%;
+  left: rem(4);
+  top: rem(4);
+  width: 100%;
+  z-index: -3;
+}
+.button.button--white::before {
+  border-color: $color-white;
 }
 .button::after {
   background-color: $color-white;
@@ -39,8 +46,14 @@
   transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
   z-index: -2;
 }
+.button.button--white::after {
+  background-color: $color-blue;
+}
 .button:hover {
   color: $color-blue;
+}
+.button.button--white:hover {
+  color: $color-white;
 }
 .button:hover:after {
   transform: scale(1, 1);
@@ -49,6 +62,10 @@
 .button:hover span::after {
   background-color: $color-blue;
 }
+.button.button--white:hover span,
+.button.button--white:hover span::after {
+  background-color: $color-white;
+}
 .button span,
 .button span::after {
   content: "";
@@ -56,15 +73,19 @@
   display: block;
   background-color: $color-white;
 }
+.button.button--white span,
+.button.button--white span::after {
+  background-color: $color-blue;
+}
 .button span {
   width: rem(40);
   height: rem(1);
   right: rem(36);
   top: 50%;
   transform: translateY(-50%);
-	@include mq('md') {
-	 right: rem(40);
-	}
+  @include mq("md") {
+    right: rem(40);
+  }
 }
 .button span::after {
   width: rem(6);

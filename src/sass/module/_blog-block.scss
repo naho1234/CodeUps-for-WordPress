@@ -34,7 +34,8 @@
     display: grid;
     grid-template-columns: repeat(2, rem(333));
     width: 70.6%;
-    gap: rem(40);
+    column-gap: rem(40);
+	row-gap: rem(80);
   }
 }
 .blog-block__item + .blog-block__item {
@@ -45,6 +46,9 @@
 }
 .pagenavi {
   grid-column: 1 / -1; /* ページネーションが全幅を占めるようにします */
+}
+.blog-block .pagenavi{
+	margin-top: rem(7);
 }
 //=====================
 //サイドバー
@@ -57,6 +61,9 @@
 }
 .blog-block__sidebar-item:not(:first-child) {
   margin-top: rem(80);
+  @include mq('md') {
+   margin-top: rem(88);
+  }
 }
 .blog-block__sidebar-title {
   display: flex;
@@ -77,6 +84,11 @@
   display: block;
   object-fit: cover;
 }
+.blog-block__sidebar-head {
+  color: $color-green;
+  font-weight: $regular;
+  font-size: rem(24);
+}
 .blog-block__sidebar-content {
   margin-top: rem(24);
 }
@@ -92,6 +104,9 @@
 }
 .blog-block__popular-item + .blog-block__popular-item {
   margin-top: rem(24);
+  @include mq('md') {
+   margin-top: rem(30);
+  }
 }
 
 // 口コミ
@@ -111,10 +126,10 @@
   line-height: 1.5;
 }
 .blog-block__reviews-title {
-  margin-top: rem(8);
+  margin-top: rem(9);
   color: $color-green;
+  font-size: rem(24);
   font-weight: $medium;
-  line-height: 1;
 }
 .blog-block__reviews-btn {
   margin-top: rem(44);
@@ -160,7 +175,7 @@
   font-size: rem(24);
   color: $color-blue;
   font-weight: $regular;
-  padding-left: rem(24);
+  padding-left: rem(30);
   cursor: pointer;
 }
 .blog-block__archive-head::before {
@@ -206,5 +221,8 @@
   margin-top: rem(4);
 }
 .blog-block__archive-content {
-  margin-left: rem(16);
+  margin-left: rem(26);
+}
+.blog-block__archive-content:not(:first-child){
+	margin-top: rem(4);
 }

@@ -1,0 +1,98 @@
+@use "global" as *;
+.blog-detail {
+  position: relative;
+}
+.blog-detail::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: rem(120);
+  height: rem(55);
+  left: rem(16);
+  top: rem(28);
+  background-image: url(../images/common/voice-fish.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: -1;
+  @include mq("md") {
+    width: rem(301);
+    height: rem(138);
+    left: rem(100);
+    top: rem(80);
+  }
+}
+.blog-detail__contents {
+  max-width: rem(700);
+  width: 100%;
+}
+.blog-detail__date {
+  color: $color-green;
+  font-family: $second-font-family;
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: 1.28;
+  @include mq("md") {
+    font-size: rem(14);
+  }
+}
+.blog-detail__title {
+  color: $color-green;
+  font-size: rem(24);
+  font-weight: $medium;
+  padding-bottom: rem(5);
+  border-bottom: 1px solid $color-blue;
+  @include mq("md") {
+    font-size: rem(32);
+  }
+}
+.blog-detail__content figure {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 345 / 231;
+  margin-top: rem(24);
+  @include mq("md") {
+    max-width: rem(700);
+    aspect-ratio: 700 / 468;
+    margin-top: rem(40);
+  }
+}
+.blog-detail__content p {
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+.blog-detail__content ul {
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+.blog-detail__content ul li:not(:first-of-type) {
+  margin-top: rem(4);
+}
+.blog-detail__content ul li {
+  position: relative;
+  padding-left: rem(27);
+}
+.blog-detail__content ul li::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: rem(18);
+  height: rem(18);
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url(../images/common/starfish-green.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.blog-detail__contents .wp-pagenavi {
+  justify-content: center;
+}
+.blog-detail__contents .pagenavi a:last-of-type {
+  margin-left: rem(82);
+}

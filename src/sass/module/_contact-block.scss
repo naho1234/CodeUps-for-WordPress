@@ -1,0 +1,28 @@
+@use "global" as *;
+.contact-block {
+  position: relative;
+}
+.contact-block::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: rem(120);
+  height: rem(55);
+  left: rem(16);
+  top: rem(28);
+  background-image: url(../images/common/voice-fish.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: -1;
+  @include mq("md") {
+    width: rem(301);
+    height: rem(138);
+    left: rem(100);
+    top: rem(80);
+  }
+}
+.contact-block__inner.inner {
+  max-width: rem(750);
+  width: 100%;
+}

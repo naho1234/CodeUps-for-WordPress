@@ -25,7 +25,8 @@
 .campaign-block__categories {
   display: grid;
   grid-template-columns: repeat(2, rem(162));
-  gap: rem(21);
+  column-gap: rem(18);
+  row-gap: rem(13);
   justify-content: center;
   @include mq("md") {
     grid-template-columns: repeat(4, rem(162));
@@ -59,8 +60,8 @@
   background-color: $color-blue;
 }
 .campaign-block__lists {
-  margin-top: rem(40);
-  gap: rem(40);
+  margin-top: rem(38);
+  gap: rem(37);
   display: grid;
   @include mq("md") {
     margin-top: rem(40);

@@ -63,8 +63,8 @@
   font-size: rem(14);
   font-weight: $regular;
   padding: rem(8) rem(15);
-  border: 1px solid $color-blue;
-  background-color: $color-white;
+  background-color: #DDF0F1;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   @include mq("md") {
     max-width: rem(300);
     font-size: rem(24);
@@ -76,7 +76,7 @@
   background-color: $color-blue;
 }
 .information-block__lists {
-  margin-top: rem(26);
+  margin-top: rem(15);
   @include mq("md") {
     margin-top: rem(24);
   }

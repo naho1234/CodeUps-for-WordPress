@@ -1,7 +1,9 @@
 @use "global" as *;
 .gallery-block-layout {
-  padding-top: rem(40);
+  padding-top: rem(36);
+  padding-bottom: rem(25);
   @include mq("md") {
     padding-top: rem(120);
+	padding-bottom: 0;
   }
 }
