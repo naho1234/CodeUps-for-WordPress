@@ -34,7 +34,7 @@
   }
 }
 .price-block__content + .price-block__content {
-  margin-top: rem(40);
+  margin-top: rem(37);
   @include mq("md") {
     margin-top: rem(80);
   }
@@ -88,25 +88,29 @@
 }
 .price-block__list th,
 .price-block__list td {
-  height: rem(60);
+  height: rem(57);
+  @include mq("md") {
+    height: rem(59);
+  }
 }
 .price-block__list-title,
 .price-block__list-money {
-  padding: rem(7);
+  padding: rem(6) rem(14);
   font-size: rem(16);
   color: $color-green;
   font-weight: $regular;
   line-height: 1.5;
   @include mq("md") {
-    padding: rem(18) rem(16);
+    padding: rem(11) rem(14);
     font-size: rem(16);
   }
 }
 .price-block__list-title {
   text-align: center;
-  width: 71%;
+  width: 70%;
   @include mq("md") {
     text-align: left;
+    width: 67.5%;
   }
 }
 .price-block__list-money {

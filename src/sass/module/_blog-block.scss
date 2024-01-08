@@ -35,7 +35,7 @@
     grid-template-columns: repeat(2, rem(333));
     width: 70.6%;
     column-gap: rem(40);
-	row-gap: rem(80);
+    row-gap: rem(80);
   }
 }
 .blog-block__item + .blog-block__item {
@@ -47,22 +47,28 @@
 .pagenavi {
   grid-column: 1 / -1; /* ページネーションが全幅を占めるようにします */
 }
-.blog-block .pagenavi{
-	margin-top: rem(7);
+.blog-block .pagenavi {
+  margin-top: rem(80);
+  @include mq("md") {
+    margin-top: rem(7);
+  }
 }
 //=====================
 //サイドバー
 //=====================
 .blog-block__sidebar {
   margin-top: rem(80);
+  width: 85%;
+  margin-inline: auto;
   @include mq("md") {
     margin-top: 0;
+	width: 42%;
   }
 }
 .blog-block__sidebar-item:not(:first-child) {
-  margin-top: rem(80);
-  @include mq('md') {
-   margin-top: rem(88);
+  margin-top: rem(85);
+  @include mq("md") {
+    margin-top: rem(88);
   }
 }
 .blog-block__sidebar-title {
@@ -103,9 +109,9 @@
   padding-top: 0;
 }
 .blog-block__popular-item + .blog-block__popular-item {
-  margin-top: rem(24);
-  @include mq('md') {
-   margin-top: rem(30);
+  margin-top: rem(32);
+  @include mq("md") {
+    margin-top: rem(30);
   }
 }
 
@@ -223,6 +229,6 @@
 .blog-block__archive-content {
   margin-left: rem(26);
 }
-.blog-block__archive-content:not(:first-child){
-	margin-top: rem(4);
+.blog-block__archive-content:not(:first-child) {
+  margin-top: rem(4);
 }

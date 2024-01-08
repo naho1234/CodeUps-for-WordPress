@@ -25,7 +25,8 @@
 .voice-block__categories {
   display: grid;
   grid-template-columns: repeat(2, rem(162));
-  gap: rem(21);
+  column-gap: rem(21);
+  row-gap: rem(13);
   justify-content: center;
   @include mq("md") {
     grid-template-columns: repeat(4, rem(162));

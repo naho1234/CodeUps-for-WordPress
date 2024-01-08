@@ -146,11 +146,13 @@ a {
 }
 
 .blog-block-layout {
+	padding-bottom: 1.25rem;
 	padding-top: 3.25rem;
 }
 
 .blog-detail__layout {
-	padding-top: 3.25rem;
+	padding-bottom: 1.3125rem;
+	padding-top: 2.875rem;
 }
 
 .campaign-block-layout {
@@ -227,6 +229,7 @@ a {
 }
 
 .voice-block-layout {
+	padding-bottom: 1.5625rem;
 	padding-top: 3.25rem;
 }
 
@@ -374,15 +377,18 @@ a {
 }
 
 .blog-block .pagenavi {
-	margin-top: 0.4375rem;
+	margin-top: 5rem;
 }
 
 .blog-block__sidebar {
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 5rem;
+	width: 85%;
 }
 
 .blog-block__sidebar-item:not(:first-child) {
-	margin-top: 5rem;
+	margin-top: 5.3125rem;
 }
 
 .blog-block__sidebar-title {
@@ -431,7 +437,7 @@ a {
 }
 
 .blog-block__popular-item + .blog-block__popular-item {
-	margin-top: 1.5rem;
+	margin-top: 2rem;
 }
 
 .blog-block__reviews__img img {
@@ -671,7 +677,8 @@ a {
 	color: #0D2936;
 	font-size: 1.5rem;
 	font-weight: 500;
-	padding-bottom: 0.3125rem;
+	margin-top: 0.3125rem;
+	padding-bottom: 0.1875rem;
 }
 
 .blog-detail__content figure {
@@ -713,12 +720,16 @@ a {
 	width: 1.125rem;
 }
 
+.blog-detail__contents .pagenavi {
+	margin-top: 2.5rem;
+}
+
 .blog-detail__contents .wp-pagenavi {
 	justify-content: center;
 }
 
 .blog-detail__contents .pagenavi a:last-of-type {
-	margin-left: 5.125rem;
+	margin-left: 5.25rem;
 }
 
 .blog {
@@ -2361,7 +2372,7 @@ a {
 }
 
 .price-block__content + .price-block__content {
-	margin-top: 2.5rem;
+	margin-top: 2.3125rem;
 }
 
 .price-block__wrap {
@@ -2408,7 +2419,7 @@ a {
 
 .price-block__list th,
 .price-block__list td {
-	height: 3.75rem;
+	height: 3.5625rem;
 }
 
 .price-block__list-title,
@@ -2417,12 +2428,12 @@ a {
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
-	padding: 0.4375rem;
+	padding: 0.375rem 0.875rem;
 }
 
 .price-block__list-title {
 	text-align: center;
-	width: 71%;
+	width: 70%;
 }
 
 .price-block__list-money {
@@ -2885,11 +2896,14 @@ body.is-open {
 }
 
 .voice-block__categories {
-	grid-gap: 1.3125rem;
+	grid-column-gap: 1.3125rem;
+	-moz-column-gap: 1.3125rem;
+	grid-row-gap: 0.8125rem;
+	column-gap: 1.3125rem;
 	display: grid;
-	gap: 1.3125rem;
 	grid-template-columns: repeat(2, 10.125rem);
 	justify-content: center;
+	row-gap: 0.8125rem;
 }
 
 .voice-block__category {
@@ -3054,11 +3068,13 @@ html {
 }
 
 .blog-block-layout {
+	padding-bottom: 0;
 	padding-top: 9.375rem;
 }
 
 .blog-detail__layout {
-	padding-top: 9.375rem;
+	padding-bottom: 0;
+	padding-top: 8.9375rem;
 }
 
 .campaign-block-layout {
@@ -3134,6 +3150,7 @@ html {
 }
 
 .voice-block-layout {
+	padding-bottom: 0;
 	padding-top: 9.375rem;
 }
 
@@ -3252,8 +3269,13 @@ html {
 	margin-top: 0;
 }
 
+.blog-block .pagenavi {
+	margin-top: 0.4375rem;
+}
+
 .blog-block__sidebar {
 	margin-top: 0;
+	width: 42%;
 }
 
 .blog-block__sidebar-item:not(:first-child) {
@@ -3282,6 +3304,7 @@ html {
 
 .blog-detail__title {
 	font-size: 2rem;
+	padding-bottom: 0;
 }
 
 .blog-detail__content figure {
@@ -3296,6 +3319,10 @@ html {
 
 .blog-detail__content ul {
 	margin-top: 2.5rem;
+}
+
+.blog-detail__contents .pagenavi {
+	margin-top: 5rem;
 }
 
 .blog {
@@ -3961,14 +3988,20 @@ html {
 	max-width: 4rem;
 }
 
+.price-block__list th,
+.price-block__list td {
+	height: 3.6875rem;
+}
+
 .price-block__list-title,
 .price-block__list-money {
 	font-size: 1rem;
-	padding: 1.125rem 1rem;
+	padding: 0.6875rem 0.875rem;
 }
 
 .price-block__list-title {
 	text-align: left;
+	width: 67.5%;
 }
 
 .price {

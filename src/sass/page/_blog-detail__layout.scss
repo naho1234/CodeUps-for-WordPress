@@ -1,7 +1,9 @@
 @use "global" as *;
 .blog-detail__layout {
-  padding-top: rem(52);
+  padding-top: rem(46);
+  padding-bottom: rem(21);
   @include mq("md") {
-    padding-top: rem(150);
+    padding-top: rem(143);
+	padding-bottom: 0;
   }
 }
